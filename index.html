@@ -182,6 +182,11 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
 .crosshair::after{width:100%;height:1px;top:50%;transform:translateY(-50%)}
 .page-transition{animation:pageIn 0.5s cubic-bezier(0.4,0,0.2,1)}
 @keyframes pageIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.hero-badge{animation:fadeIn 1s ease forwards, pulse 2s ease-in-out 1s infinite;opacity:0}
+.hero > img{animation:fadeIn 1s ease 0.8s forwards;opacity:0}
+.hero-subtitle{animation:fadeIn 1s ease 1.6s forwards;opacity:0}
+.hero-cta{animation:fadeIn 1s ease 2.3s forwards;opacity:0}
 @media(max-width:768px){
   body{
     background-image:linear-gradient(160deg,#0a0a1a 0%,#050508 40%,#0d0508 70%,#080510 100%);

@@ -6,6 +6,7 @@
 <title>Heat Poppers — Catálogo Oficial</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://i.imgur.com/L7Z6Q96.png" as="image">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -303,7 +304,7 @@ const PRODUCTS = [
     shortDesc:'Basado en nitrito de pentilo, más intenso y de mayor duración que el Rush Original. Formulado para usuarios que prefieren una experiencia más intensa.',
     fullDesc:'Super Rush está basado en nitrito de pentilo y es más intenso y de mayor duración que el Rush Original, formulado para usuarios que prefieren una experiencia más intensa. Lanzado por los mismos laboratorios Rush, esta versión eleva la fórmula original a un nuevo nivel sin sacrificar la fiabilidad de la marca.',
     composition:'Nitrito de pentilo', onset:'Inmediato', duration:'Media-alta', intensity:'Media-alta', volume:'10ml',
-    price:70000, oldPrice:80000, stock:'available', stockCount:12,
+    price:70000, oldPrice:80000, stock:'low', stockCount:4,
     images:['https://i.imgur.com/Pk4pVSk.jpeg','https://i.imgur.com/iO46cYl.png'],
     glowColor:'rgba(249,115,22,0.3)'
   },
@@ -313,7 +314,7 @@ const PRODUCTS = [
     shortDesc:'La expresión más intensa de la familia Rush. Fabricado con nitrito de pentilo, redefine lo que significa estimular los sentidos. No recomendado para principiantes.',
     fullDesc:'Super Rush Black Label es la expresión más intensa de la familia Rush. Fabricado con nitrito de pentilo, ofrece una experiencia aromática que redefine lo que significa estimular los sentidos. La variante más potente dentro de la línea Rush. No recomendado para principiantes.',
     composition:'Nitrito de pentilo', onset:'Inmediato', duration:'Alta', intensity:'Alta', volume:'10ml',
-    price:70000, oldPrice:80000, stock:'low', stockCount:3,
+    price:70000, oldPrice:80000, stock:'available', stockCount:10,
     images:['https://i.imgur.com/rlyGUH6.jpeg','https://i.imgur.com/VbiYYiG.png'],
     glowColor:'rgba(100,100,110,0.3)'
   },
@@ -323,7 +324,7 @@ const PRODUCTS = [
     shortDesc:'La joya de la corona de la línea Jungle Juice. Fórmula de nitrito de amilo refinada mediante triple destilación para una pureza excepcional.',
     fullDesc:'Jungle Juice Gold Label es la joya de la corona de la línea Jungle Juice. Su fórmula de nitrito de amilo, refinada mediante triple destilación, garantiza pureza excepcional. Ofrece efecto eufórico inmediato, relajación muscular profunda y sensación envolvente.',
     composition:'Nitrito de amilo (triple destilación)', onset:'Rápido', duration:'Media-alta', intensity:'Alta', volume:'10ml',
-    price:70000, oldPrice:80000, stock:'available', stockCount:8,
+    price:70000, oldPrice:80000, stock:'low', stockCount:4,
     images:['https://i.imgur.com/4exifsQ.jpeg','https://i.imgur.com/TRQJ0UU.jpeg'],
     glowColor:'rgba(212,160,23,0.3)'
   },
@@ -333,7 +334,7 @@ const PRODUCTS = [
     shortDesc:'El rey indiscutible de los poppers ultra potentes. Diseñado para quienes buscan llevar sus experiencias al límite. No recomendado para principiantes.',
     fullDesc:'El Jungle Juice Black Label es el rey indiscutible de los poppers ultra potentes. Su fórmula a base de nitrito de amilo proporciona efectos rápidos e intensos con evaporación lenta que prolonga la duración. No recomendado para principiantes.',
     composition:'Nitrito de amilo / Nitrito de pentilo', onset:'Inmediato', duration:'Alta', intensity:'Extrema', volume:'10ml',
-    price:70000, oldPrice:80000, stock:'low', stockCount:2,
+    price:70000, oldPrice:80000, stock:'out', stockCount:0,
     images:['https://i.imgur.com/g5SbJRT.jpeg','https://i.imgur.com/2wKUOeO.png'],
     glowColor:'rgba(50,50,60,0.4)'
   },
@@ -343,7 +344,7 @@ const PRODUCTS = [
     shortDesc:'La edición más potente de la icónica marca Amsterdam. Filtrado a la perfección para ofrecer una experiencia limpia y premium.',
     fullDesc:'Amsterdam Platinum es la edición más potente de la icónica marca Amsterdam. Filtrado a la perfección para ofrecer una experiencia limpia y premium. El efecto es gradual pero consistente, alcanzando una meseta de relajación profunda que distingue esta versión Platinum del resto de la línea.',
     composition:'Nitrito de propilo', onset:'Gradual', duration:'Alta', intensity:'Alta', volume:'10ml',
-    price:70000, oldPrice:80000, stock:'available', stockCount:10,
+    price:70000, oldPrice:80000, stock:'low', stockCount:4,
     images:['https://i.imgur.com/5s7mhzv.jpeg','https://i.imgur.com/a9SvHh5.png'],
     glowColor:'rgba(59,130,246,0.3)'
   }
@@ -357,7 +358,7 @@ function waUrl(name){ return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIC
 
 function getStockBadge(stock, count){
   if(stock==='available') return `<span class="stock-badge stock-available"><span class="stock-dot"></span>Disponible</span>`;
-  if(stock==='low') return `<span class="stock-badge stock-low"><span class="stock-dot"></span>¡Solo ${count} unidades!</span>`;
+  if(stock==='low') return `<span class="stock-badge stock-low"><span class="stock-dot"></span>Pocas unidades</span>`;
   return `<span class="stock-badge stock-out">Agotado</span>`;
 }
 

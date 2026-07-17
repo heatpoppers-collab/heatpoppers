@@ -212,7 +212,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
 
 <nav>
   <div class="nav-logo" onclick="showPage('home')">
-    <img src="https://i.imgur.com/L7Z6Q96.png" alt="Heat Poppers" style="height:46px;width:auto;mix-blend-mode:screen;filter:drop-shadow(0 0 10px rgba(249,115,22,0.4))">
+    <img src="https://i.imgur.com/OfJPNMB.png" alt="Heat Poppers" style="height:46px;width:auto;filter:drop-shadow(0 0 10px rgba(249,115,22,0.4))">
   </div>
   <div class="nav-links">
     <a href="#" onclick="showPage('home');return false">Inicio</a>
@@ -242,7 +242,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
     <div class="crosshair" style="bottom:30%;left:20%"></div>
     <div class="crosshair" style="bottom:20%;right:10%"></div>
     <div class="hero-badge">Precio de Lanzamiento</div>
-    <img src="https://i.imgur.com/L7Z6Q96.png" alt="Heat Poppers" style="max-width:min(500px,84vw);width:auto;mix-blend-mode:screen;filter:drop-shadow(0 0 60px rgba(249,115,22,0.55));position:relative;z-index:1;margin-bottom:1.5rem">
+    <img src="https://i.imgur.com/OfJPNMB.png" alt="Heat Poppers" style="max-width:min(500px,84vw);width:auto;filter:drop-shadow(0 0 60px rgba(249,115,22,0.55));position:relative;z-index:1;margin-bottom:1.5rem">
     <p class="hero-subtitle">Los poppers más potentes del mercado, directo a tu puerta en Colombia. Entrega discreta y segura en Bogotá y envíos a todo el país.</p>
     <button class="hero-cta" onclick="scrollToProducts()">
       Ver Catálogo
@@ -325,7 +325,7 @@ const PRODUCTS = [
     fullDesc:'Jungle Juice Gold Label es la joya de la corona de la línea Jungle Juice. Su fórmula de nitrito de amilo, refinada mediante triple destilación, garantiza pureza excepcional. Ofrece efecto eufórico inmediato, relajación muscular profunda y sensación envolvente.',
     composition:'Nitrito de amilo (triple destilación)', onset:'Rápido', duration:'Media-alta', intensity:'Alta', volume:'10ml',
     price:70000, oldPrice:80000, stock:'low', stockCount:4,
-    images:['https://i.imgur.com/4exifsQ.jpeg','https://i.imgur.com/TRQJ0UU.jpeg'],
+    images:['https://i.imgur.com/4exifsQ.jpeg','https://i.imgur.com/IEqpUpW.png'],
     glowColor:'rgba(212,160,23,0.3)'
   },
   {
@@ -378,7 +378,14 @@ function buildCarousel(p, view) {
     <button class="cs-btn cs-prev" onclick="${stop}csNav('${p.id}','${view}',-1)">‹</button>
     <button class="cs-btn cs-next" onclick="${stop}csNav('${p.id}','${view}',1)">›</button>
     <div class="cs-dots">${imgs.map((_,i)=>`<span class="cs-dot${i===0?' active':''}" onclick="${stop}csGoTo('${p.id}','${view}',${i})"></span>`).join('')}</div>` : '';
-  return `<div class="cs-wrap" data-cs="${p.id}-${view}" data-cur="0">${slides}${nav}</div>`;
+  return `<div class="cs-wrap" data-cs="${p.id}-${view}" data-cur="0" ontouchstart="csTouchStart(event)" ontouchend="csTouchEnd(event,'${p.id}','${view}')">${slides}${nav}</div>`;
+}
+
+var _tsX = 0;
+function csTouchStart(e){ _tsX = e.changedTouches[0].clientX; }
+function csTouchEnd(e, pid, view){
+  var dx = e.changedTouches[0].clientX - _tsX;
+  if(Math.abs(dx) > 45) csNav(pid, view, dx < 0 ? 1 : -1);
 }
 
 function csNav(pid, view, dir) {

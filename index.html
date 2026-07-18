@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heat Poppers — Catálogo Oficial</title>
+<link rel="icon" href="https://i.imgur.com/FnhVKFL.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://i.imgur.com/L7Z6Q96.png" as="image">
@@ -182,11 +183,6 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
 .crosshair::after{width:100%;height:1px;top:50%;transform:translateY(-50%)}
 .page-transition{animation:pageIn 0.5s cubic-bezier(0.4,0,0.2,1)}
 @keyframes pageIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.hero-badge{animation:fadeIn 1s ease forwards, pulse 2s ease-in-out 1s infinite;opacity:0}
-.hero > img{animation:fadeIn 1s ease 0.8s forwards;opacity:0}
-.hero-subtitle{animation:fadeIn 1s ease 1.6s forwards;opacity:0}
-.hero-cta{animation:fadeIn 1s ease 2.3s forwards;opacity:0}
 @media(max-width:768px){
   body{
     background-image:linear-gradient(160deg,#0a0a1a 0%,#050508 40%,#0d0508 70%,#080510 100%);
@@ -222,6 +218,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
   <div class="nav-links">
     <a href="#" onclick="showPage('home');return false">Inicio</a>
     <a href="#products" onclick="scrollToProducts();return false">Productos</a>
+    <a href="https://www.instagram.com/heatpoppers_/" target="_blank" rel="noopener" aria-label="Instagram" style="color:var(--text-muted);display:flex;align-items:center;transition:color 0.3s" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color=''"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
     <a href="#" id="navWaLink" target="_blank" class="nav-whatsapp">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
       Pedir por WhatsApp
@@ -282,6 +279,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
 <footer>
   <img src="https://i.imgur.com/L7Z6Q96.png" alt="Heat Poppers" style="max-width:160px;width:auto;mix-blend-mode:screen;filter:drop-shadow(0 0 15px rgba(249,115,22,0.3));margin:0 auto 0.5rem;display:block">
   <div class="footer-tagline">Hot · Bold · Alive</div>
+  <a href="https://www.instagram.com/heatpoppers_/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;color:rgba(255,255,255,0.3);font-size:0.75rem;text-decoration:none;margin-bottom:0.75rem;transition:color 0.3s" onmouseover="this.style.color='#f97316'" onmouseout="this.style.color='rgba(255,255,255,0.3)'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>@heatpoppers_</a>
   <p class="footer-text">Productos exclusivos para adultos mayores de 18 años.</p>
   <div class="footer-legal">Uso exclusivo para adultos · No ingerir · No aplicar sobre piel ni mucosas<br>Mantener en lugar fresco y ventilado · &copy; 2026 Heat Poppers</div>
 </footer>
@@ -290,7 +288,7 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
 // ============================================================
 // 🔥 CONFIGURACIÓN
 // ============================================================
-const WHATSAPP_NUMBER = '573000000000'; // ← reemplaza con tu número
+const WHATSAPP_NUMBER = '573176954225'; // ← reemplaza con tu número
 
 const PRODUCTS = [
   {
@@ -544,6 +542,30 @@ function setNavWaLinks(){
 document.addEventListener('DOMContentLoaded',()=>{
   history.replaceState({page:'home'}, '', window.location.href);
   renderProducts(); createParticles(); setNavWaLinks(); setTimeout(initReveal,300);
+
+  // Hero sequential fade-in
+  var badge = document.querySelector('.hero-badge');
+  var hEls = [
+    document.querySelector('.hero > img'),
+    document.querySelector('.hero-subtitle'),
+    document.querySelector('.hero-cta')
+  ];
+  if(badge) badge.style.opacity = '0';
+  hEls.forEach(el => { if(el) el.style.opacity = '0'; });
+
+  if(badge) setTimeout(() => {
+    badge.style.transition = 'opacity 0.9s ease';
+    badge.style.opacity = '1';
+    setTimeout(() => { badge.style.opacity = ''; badge.style.transition = ''; }, 1000);
+  }, 150);
+
+  hEls.forEach((el, i) => {
+    if(!el) return;
+    setTimeout(() => {
+      el.style.transition = 'opacity 0.9s ease';
+      el.style.opacity = '1';
+    }, 600 + i * 600);
+  });
 });
 </script>
 </body>

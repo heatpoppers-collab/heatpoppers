@@ -10,6 +10,20 @@
   gtag('js', new Date());
   gtag('config', 'AW-18330856851');
 </script>
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') { window.location = url; }
+  };
+  gtag('event', 'conversion', {
+    'send_to': 'AW-18330856851/aw1qCKSyptIcEJPb6qRE',
+    'value': 1.0,
+    'currency': 'COP',
+    'event_callback': callback
+  });
+  return false;
+}
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Heat Poppers — Catálogo Oficial</title>
 <link rel="icon" href="https://i.imgur.com/FnhVKFL.png" type="image/png">

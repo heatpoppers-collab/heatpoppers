@@ -307,6 +307,14 @@ footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:3r
     </button>
   </section>
 
+  </section>
+
+  <section style="padding:0 2rem 3rem;max-width:1400px;margin:0 auto">
+    <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;text-align:center;max-width:800px;margin:0 auto">
+      Heat Poppers es la tienda líder de <strong style="color:var(--text)">poppers en Colombia</strong>. Vendemos poppers originales importados — Rush Original, Super Rush, Super Rush Black Label, Jungle Juice Gold Label, Jungle Juice Black Label y Amsterdam Platinum — con entrega discreta en Bogotá y envíos a todo el país. Todos nuestros productos son 100% originales, importados directamente. Hacemos pedidos por WhatsApp de forma rápida y segura.
+    </p>
+  </section>
+
   <section class="section" id="products">
     <div class="section-header reveal">
       <div class="section-label">Catálogo 2026</div>
@@ -500,9 +508,37 @@ function renderProducts(){
   }).join('');
 }
 
+function injectProductSchema(p){
+  var av = p.stock==='available' ? 'https://schema.org/InStock' :
+           p.stock==='low' ? 'https://schema.org/LimitedAvailability' :
+           'https://schema.org/OutOfStock';
+  var s = document.getElementById('prod-schema');
+  if(s) s.remove();
+  var el = document.createElement('script');
+  el.id = 'prod-schema';
+  el.type = 'application/ld+json';
+  el.textContent = JSON.stringify({
+    "@context":"https://schema.org",
+    "@type":"Product",
+    "name": p.name,
+    "description": p.fullDesc,
+    "brand":{"@type":"Brand","name":"Heat Poppers"},
+    "offers":{
+      "@type":"Offer",
+      "price": p.price,
+      "priceCurrency":"COP",
+      "availability": av,
+      "url":"https://heatpoppers.com/#"+p.id,
+      "seller":{"@type":"Organization","name":"Heat Poppers"}
+    }
+  });
+  document.head.appendChild(el);
+}
+
 function renderProductDetail(pid){
   var p = PRODUCTS.find(x => x.id === pid);
   if(!p) return;
+  injectProductSchema(p);
   var isOut = p.stock === 'out';
   document.getElementById('productDetail').innerHTML = `
   <div class="breadcrumb">

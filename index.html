@@ -627,8 +627,15 @@ function initReveal(){
 }
 function setNavWaLinks(){
   var url=`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent('Hola Heat Poppers! Quiero hacer un pedido.')}`;
-  document.getElementById('navWaLink').href=url;
-  document.getElementById('mobileWaLink').href=url;
+  var navWa = document.getElementById('navWaLink');
+  var mobileWa = document.getElementById('mobileWaLink');
+  navWa.href = url;
+  mobileWa.href = url;
+  [navWa, mobileWa].forEach(function(el){
+    el.addEventListener('click', function(){
+      if(typeof gtag_report_conversion !== 'undefined') gtag_report_conversion();
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded',()=>{

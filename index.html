@@ -571,7 +571,7 @@ function renderProductDetail(pid){
       </div>
       ${isOut
         ? `<button class="detail-whatsapp-btn out-of-stock" disabled>${WA_SVG} Producto Agotado</button>`
-        : `<button class="detail-whatsapp-btn" onclick="openWhatsApp('${p.id}')">${WA_SVG} Pedir por WhatsApp</button>`}
+        : `<a class="detail-whatsapp-btn" href="${waUrl(p.name)}" target="_blank" rel="noopener" onclick="if(typeof gtag_report_conversion!=='undefined'){gtag_report_conversion();}">${WA_SVG} Pedir por WhatsApp</a>`}
       <div class="detail-specs">
         <div class="detail-specs-title">Especificaciones</div>
         <div class="specs-grid">
